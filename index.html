@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BTSdigital - Peta Komuniti BTS</title>
+
+<link rel="stylesheet" href="https://btsdigital71750-byte.github.io/Geodata/" />
+<script src="https://btsdigital71750-byte.github.io/Geodata/"></script>
+
+<style>
+body{font-family:Arial, sans-serif;margin:0;background:#f4f7fb;color:#333}
+header{background:#0b6fa4;color:white;padding:30px;text-align:center}
+nav{background:#084d73;padding:10px;text-align:center}
+nav a{color:white;margin:0 15px;text-decoration:none;font-weight:bold}
+section{padding:40px;max-width:1100px;margin:auto}
+.card{background:white;padding:20px;margin:15px 0;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.1)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+footer{background:#0b6fa4;color:white;text-align:center;padding:20px}
+button{background:#1ea672;border:none;color:white;padding:12px 20px;border-radius:5px;font-size:16px}
+#map{height:450px;border-radius:8px}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>BTSdigital</h1>
+<p>Peta Komuniti Digital Bandar Tasik Senangin</p>
+</header>
+
+<nav>
+<a href="#projek">Projek</a>
+<a href="#peta">Peta Komuniti</a>
+<a href="#data">Data Geospatial</a>
+<a href="#hubungi">Hubungi</a>
+</nav>
+
+<section id="projek">
+<h2>Projek BTSdigital</h2>
+<div class="card">
+<p>BTSdigital ialah projek komuniti untuk membangunkan pangkalan data geospatial bagi kawasan Bandar Tasik Senangin (BTS). Projek ini menggunakan perisian sumber terbuka seperti QGIS, GPS Essentials dan GitHub.</p>
+</div>
+</section>
+
+<section id="peta">
+<h2>Peta Komuniti BTS</h2>
+<div class="card">
+<div id="map"></div>
+</div>
+</section>
+
+<section id="data">
+<h2>Data Geospatial Komuniti</h2>
+<div class="grid">
+<div class="card">
+<h3>Peta Kubur</h3>
+<p>Lokasi perkuburan komuniti untuk memudahkan rujukan keluarga dan pengurusan.</p>
+</div>
+<div class="card">
+<h3>Pili Bomba</h3>
+<p>Pemetaan pili bomba untuk kegunaan kecemasan dan keselamatan.</p>
+</div>
+<div class="card">
+<h3>Kemudahan Komuniti</h3>
+<p>Peta surau, sekolah, klinik dan kemudahan masyarakat.</p>
+</div>
+</div>
+</section>
+
+<section id="hubungi">
+<h2>Hubungi Kami</h2>
+<div class="card">
+<p>Email: btsdigital71750@gmail.com</p>
+<p>Lokasi Operasi: Surau AL-FATEH</p>
+</div>
+</section>
+
+<footer>
+<p>© 2026 BTSdigital - Komuniti Digital BTS</p>
+</footer>
+
+<script>
+var map = L.map('map').setView([5.4,103.0], 13);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap'
+}).addTo(map);
+
+var kubur = L.marker([5.401,103.002]).addTo(map)
+.bindPopup('Contoh Lokasi Kubur');
+
+var hydrant = L.marker([5.398,103.006]).addTo(map)
+.bindPopup('Hydrant Bomba');
+
+var surau = L.marker([5.404,103.004]).addTo(map)
+.bindPopup('Surau AL-FATEH - Pusat Operasi BTSdigital');
+
+</script>
+
+</body>
+</html>
